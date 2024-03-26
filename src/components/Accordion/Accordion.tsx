@@ -2,22 +2,22 @@ import { FC, useState } from 'react';
 import { Panel } from './Panel';
 
 export const Accordion: FC = () => {
-  const [activeIndex, setActiveIndex] = useState<number>(0);
+  const [isActive, setIsActive] = useState<number>(0);
   return (
-    <div className='box'>
+    <>
       <h2>Lviv, Ukraine</h2>
       <Panel
-        isActive={activeIndex === 0}
         title='About'
-        onShow={() => setActiveIndex(0)}
+        isActive={isActive === 0}
+        onShow={() => setIsActive(0)}
       >
         Lviv was founded by King Danylo around 1231-1235 (the first mention is
         from 1256).
       </Panel>
       <Panel
-        isActive={activeIndex === 1}
         title='Etymology'
-        onShow={() => setActiveIndex(1)}
+        isActive={isActive === 1}
+        onShow={() => setIsActive(1)}
       >
         Lviv is a city in Ukraine, the administrative center of a region,
         agglomeration, district, urban community, a national-cultural and
@@ -27,14 +27,14 @@ export const Accordion: FC = () => {
         in terms of population.
       </Panel>
       <Panel
-        isActive={activeIndex === 2}
         title='Information'
-        onShow={() => setActiveIndex(2)}
+        isActive={isActive === 2}
+        onShow={() => setIsActive(2)}
       >
         The once-large Jewish community of the city was sharply reduced in
         number by the Nazis during the Holocaust. For decades there was no
-        working synagogue in Lviv after the final one was closed by the Soviets.
+        working synagogue in Lviv after the final one was closed by th
       </Panel>
-    </div>
+    </>
   );
 };

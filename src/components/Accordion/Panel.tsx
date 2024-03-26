@@ -14,8 +14,7 @@ export const Panel: FC<IPanelProps> = ({
   onShow,
 }: IPanelProps) => {
   const [isTextAnimation, setIsTextAnimation] = useState<boolean>(false);
-
-  const handleButtonClick = () => {
+  const handleShowText = () => {
     setIsTextAnimation(true);
     setTimeout(() => {
       setIsTextAnimation(false);
@@ -29,7 +28,7 @@ export const Panel: FC<IPanelProps> = ({
       {isActive ? (
         <p className={isTextAnimation ? 'animate' : ''}>{children}</p>
       ) : (
-        <button type='button' onClick={handleButtonClick}>
+        <button type='button' onClick={handleShowText}>
           Show
         </button>
       )}
